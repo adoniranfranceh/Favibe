@@ -1,1 +1,33 @@
-@import "bootstrap";        
+$gray: #707070; // Cinza Principal
+$blue: #1A5276; // Azul Escuro
+
+* {
+  font-family: 'Agrandir Grand', sans-serif;
+}
+
+.page {
+}
+
+.logo {
+  background-image: url('/assets/logo.png');
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+// Aplicar as variáveis personalizadas
+$theme-colors: (
+  "primary": $blue,
+  "secondary": $gray,
+  "success": #28a745,
+  "info": #17a2b8,
+  "warning": #ffc107,
+  "danger": #dc3545,
+  "light": #f8f9fa,
+  "dark": #404040
+);
+
+// Sobrescrever as variáveis de botões do Bootstrap com as novas cores
+
+
+@import "bootstrap";
