@@ -17,6 +17,9 @@ RSpec.configure do |config|
     driven_by(:rack_test)
   end
 
+  include Warden::Test::Helpers
+  include ActiveSupport::Testing::TimeHelpers
+
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
   ]
