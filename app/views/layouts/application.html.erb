@@ -13,41 +13,41 @@
   </head>
 
   <body>
-    <div class="container-flouid">
-      <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="/">
-            <img src="/assets/FAVIBE.png" alt="Favibe logo" class="logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Member</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Courses</a>
-              </li>
+    <% if user_signed_in? %>
+              
+      <div class="container-flouid">
+        <nav class="navbar navbar-expand-lg bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="/">
+              <img src="/assets/FAVIBE.png" alt="Favibe logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Member</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Courses</a>
+                </li>
 
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Blog</a>
-              </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Blog</a>
+                </li>
 
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Event</a>
-              </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Event</a>
+                </li>
 
-            </ul>
-            <form class="">
-              <a class="btn btn-primary mr-2" href="#">Login</a>
-              <a class="btn btn-success" href="#">Become member</a>
-            </form>
+              </ul>
+                <%= button_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+            </div>
           </div>
-        </div>
-      </nav>
-    </div>
+        </nav>
+      </div>
+    <% end %>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

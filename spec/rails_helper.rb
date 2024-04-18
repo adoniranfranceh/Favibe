@@ -20,6 +20,8 @@ RSpec.configure do |config|
   include Warden::Test::Helpers
   include ActiveSupport::Testing::TimeHelpers
 
+  config.include FactoryBot::Syntax::Methods
+
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
   ]
