@@ -5,6 +5,11 @@ $blue: #1A5276; // Azul Escuro
   font-family: 'Agrandir Grand', sans-serif;
 }
 
+#navbar,
+#navbar a {
+  color: #fff
+}
+
 .logo {
   background-image: url('/assets/logo.png');
   width: 100px;
