@@ -4,8 +4,9 @@ describe 'Usuário acessa página de login' do
   it 'e faz login com sucesso' do
     create(:user, email: 'usuario@email.com', password: '123456')
 
-    visit new_user_session_path
+    visit root_path
 
+    click_on 'Entrar'
     within 'form' do
       fill_in 'E-mail', with: 'usuario@email.com'
       fill_in 'Senha', with: '123456'
@@ -13,7 +14,7 @@ describe 'Usuário acessa página de login' do
     end
 
     expect(page).to have_content 'Login efetuado com sucesso.'
-    within '#navbar' do
+    within 'nav' do
       expect(page).to have_button 'Sair'
       expect(page).to have_content 'usuario@email.com'
       expect(page).not_to have_link 'Entrar'

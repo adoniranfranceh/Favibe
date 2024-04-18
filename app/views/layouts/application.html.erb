@@ -13,8 +13,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-              
+    <% if show_navigation? %>
       <div class="container-flouid">
         <nav class="navbar navbar-expand-lg bg-dark">
           <div class="container">
@@ -40,15 +39,21 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Event</a>
                 </li>
-
               </ul>
-                <%= button_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+                <% if user_signed_in? %>
+                  <div id="current_email">
+                    <%= current_user.email %>
+                  </div>
+                  <%= button_to t(:log_out), destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+                <% else %>
+                  <%= link_to t(:log_in), new_user_session_path, class: 'btn btn-primary' %>
+                <% end %>
+
             </div>
           </div>
         </nav>
       </div>
     <% end %>
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

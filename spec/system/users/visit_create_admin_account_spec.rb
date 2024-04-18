@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'Usuário cria conta admin' do
+describe 'Visitante cria conta' do
   it 'com sucesso' do
-    visit root_path
+    visit new_user_registration_path
 
     click_on 'Criar conta'
 
