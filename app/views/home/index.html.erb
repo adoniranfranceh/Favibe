@@ -1,6 +1,23 @@
-<div class="container">
-  <h1>Sobre Nossa Empresa</h1>
-  <p>Somos uma empresa dedicada a fornecer soluções inovadoras para nossos clientes. Desde o nosso início, temos trabalhado incansavelmente para oferecer produtos e serviços da mais alta qualidade.</p>
-  <p>Nosso compromisso com a excelência nos permitiu construir relacionamentos sólidos com nossos clientes e parceiros, e estamos ansiosos para continuar crescendo e atendendo às necessidades em constante evolução do mercado.</p>
-  <p>Entre em contato conosco para saber mais sobre nossos serviços e como podemos ajudá-lo a alcançar seus objetivos.</p>
-</div>
+<% if @events.any? %>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @events.each do |event| %>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.name %></h5>
+            <p class="card-text"><%= event.description %></p>
+            <p class="card-text"><strong>Data:</strong> <%= event.event_start.strftime("%d/%m/%Y") %></p>
+            <p class="card-text"><strong>Hora:</strong> <%= event.event_start.strftime("%H:%M") %></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><%= event.category %></small>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div id="no-events">
+      <h4>Não há eventos</h4>
+  </div>
+<% end %>
