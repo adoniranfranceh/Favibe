@@ -33,5 +33,6 @@ describe 'Usuário acessa página de login' do
 
     expect(page).to have_content 'E-mail ou senha inválidos.'
     expect(page).to have_current_path new_user_session_path
+    expect(page).not_to have_css '#navbar'
   end
 end
