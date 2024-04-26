@@ -6,6 +6,6 @@ FactoryBot.define do
     event_end { "2024-04-18 22:18:50" }
     location { "Rua das Palmeiras" }
     category { "Conferência" }
-    status { 1 }
+    status { :published }
   end
 end

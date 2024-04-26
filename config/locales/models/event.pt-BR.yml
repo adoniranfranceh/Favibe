@@ -1,0 +1,20 @@
+pt-BR:
+  activerecord:
+    models:
+      event:
+        one: 'Evento'
+        other: 'Eventos'
+    attributes:
+      event:
+        name: 'Nome'
+        description: 'Descrição'
+        event_start: 'Início do evento'
+        event_end: 'Fim do evento'
+        location: 'Localização'
+        category: 'Categoria'
+        status: 'Status'
+        statuses:
+          published: 'Publicado'
+          hidden: 'Oculto'
+  back: 'Voltar'
+  edit: 'Editar evento'
