@@ -37,7 +37,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Event</a>
+                  <%= link_to Event.model_name.human(count: 2), events_path, class:'nav-link active' %>
                 </li>
               </ul>
                 <% if user_signed_in? %>

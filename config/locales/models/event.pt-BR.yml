@@ -18,3 +18,7 @@ pt-BR:
           hidden: 'Oculto'
   back: 'Voltar'
   edit: 'Editar evento'
+  events_published: 'Eventos Públicos'
+  all: 'Todos os Eventos'
+  events_hidden: 'Eventos Ocultos'
+  no_events: 'Não há %{events}'

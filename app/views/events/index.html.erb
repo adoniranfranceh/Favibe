@@ -1,0 +1,8 @@
+<div class="nav-scroller border-bottom mb-4">
+  <nav class="d-flex nav nav-underline">
+    <%= link_to t('all'), events_path, class: "nav-item nav-link link-body-emphasis #{'active' if params[:filter].blank? }" %>
+    <%= link_to t('events_published'), events_path(params: { filter: 'events_published' }), class: "nav-item nav-link link-body-emphasis #{'active' if params[:filter] == 'events_published'}" %>
+    <%= link_to t('events_hidden'), events_path(params: { filter: 'events_hidden' }), class: "nav-item nav-link link-body-emphasis #{'active' if params[:filter] == 'events_hidden'}" %>
+  </nav>
+</div>
+<%= render 'shared/events' %>
